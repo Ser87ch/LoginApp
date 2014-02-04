@@ -8,7 +8,8 @@
 </head>
 <body>
 	<%
-		String user = (String) session.getAttribute("userId");
+		//String user = (String) session.getAttribute("userId");
+		String user = (String) request.getAttribute("userName");
 		if (user == null || user.trim() == "")
 			response.sendError(403);
 	%>
@@ -17,6 +18,5 @@
 		Hello,
 		<%=user%>.
 	</p>
-
 </body>
 </html>

@@ -2,6 +2,7 @@ package ru.chernobrivenko.loginapp;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,8 +27,11 @@ public class LoginServlet extends HttpServlet {
 		
 		if(loginService.authenticate(userId, password))
 		{
-			request.getSession().setAttribute("userId", userId);
-			response.sendRedirect("success.jsp");
+			request.getSession().setAttribute("userId", loginService.getUserName(userId));
+			//response.sendRedirect("success.jsp");
+			request.setAttribute("userName", loginService.getUserName(userId));
+			RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+			dispatcher.forward(request, response);
 		}
 		else
 			response.sendRedirect("login.jsp");
