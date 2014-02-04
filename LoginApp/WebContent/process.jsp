@@ -9,8 +9,7 @@
 <body>
 	<jsp:useBean id="user" class="ru.chernobrivenko.loginapp.dto.Reg"
 		scope="request">
-		<jsp:setProperty property="phone" name="user" />
-		<jsp:setProperty property="address" name="user" param="address" />
+		<jsp:setProperty property="*" name="user" />		
 	</jsp:useBean>
 
 	<p>
