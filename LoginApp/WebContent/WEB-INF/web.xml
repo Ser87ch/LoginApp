@@ -9,7 +9,7 @@
 		<jsp-file>/login.jsp</jsp-file>
 		<init-param>
 			<param-name>defaultUser</param-name>
-			<param-value>def</param-value>
+			<param-value>u1</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>

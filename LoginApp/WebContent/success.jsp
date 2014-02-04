@@ -7,16 +7,14 @@
 <title>Success</title>
 </head>
 <body>
-	<%
-		//String user = (String) session.getAttribute("userId");
-		String user = (String) request.getAttribute("userName");
-		if (user == null || user.trim() == "")
-			response.sendError(403);
-	%>
+	<jsp:useBean id="user" class="ru.chernobrivenko.loginapp.dto.User"
+		scope="request">
+		<jsp:setProperty property="name" name="user" value="new user" />
+	</jsp:useBean>
 	<h3>Login Successful!</h3>
 	<p>
 		Hello,
-		<%=user%>.
+		<jsp:getProperty property="name" name="user" />.
 	</p>
 </body>
 </html>

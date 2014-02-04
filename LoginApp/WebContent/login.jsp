@@ -13,9 +13,7 @@
 				<td>User ID:</td>
 				<%
 				String defaultUser="";
-				defaultUser = (String) session.getAttribute("userId");
-				if(defaultUser == null || defaultUser.trim() == "")
-					defaultUser = getServletConfig().getInitParameter("defaultUser");				
+				defaultUser = (String) config.getInitParameter("defaultUser");							
 				%>
 				<td><input type="text" name="userId" value="<%=defaultUser%>"></td>
 			</tr>

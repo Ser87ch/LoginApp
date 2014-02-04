@@ -3,6 +3,8 @@ package ru.chernobrivenko.loginapp.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import ru.chernobrivenko.loginapp.dto.User;
+
 public class LoginService {
 	
 	private Map<String,String> users = new HashMap<String, String>();
@@ -22,8 +24,11 @@ public class LoginService {
 			return true;
 	}
 	
-	public String getUserName(String userId)
+	public User getUserName(String userId)
 	{
-		return users.get(userId);
+		User user = new User();
+		user.setId(userId);
+		user.setName(users.get(userId));
+		return user;
 	}
 }

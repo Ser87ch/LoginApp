@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
 		{
 			request.getSession().setAttribute("userId", loginService.getUserName(userId));
 			//response.sendRedirect("success.jsp");
-			request.setAttribute("userName", loginService.getUserName(userId));
+			request.setAttribute("user", loginService.getUserName(userId));
 			RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
 			dispatcher.forward(request, response);
 		}
